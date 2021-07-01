@@ -1,0 +1,67 @@
+<div class="main-content">
+  <div class="categories">
+    <ul>
+      <li [class.checked]="!searchParams.subcategory" (click)="changeSubCategory()">All</li>
+      <li
+        [class.checked]="item.code === searchParams.subcategory"
+        *ngFor="let item of categoryInfo?.subcategories; trackBy: trackBySubCategory"
+        (click)="changeSubCategory(item)"
+      >{{ item.displayValue }}</li>
+    </ul>
+  </div>
+  <div class="conditions">
+    <ng-container *ngFor="let row of categoryInfo?.metadata">
+      <div class="row" *ngIf="showMetaRow(row.name)">
+        <b class="title">{{row.name}}</b>
+        <ul class="tabs" >
+          <li class="tag" (click)="changeMeta(row, item)" *ngFor="let item of row.metaValues; trackBy: trackByMetas">{{item.displayName}}</li>
+        </ul>
+      </div>
+    </ng-container>
+    
+    <div class="row checked-conditions" *ngIf="checkedMetas.length">
+      <b class="title">already filter</b>
+      <ul class="tabs">
+        <li class="tag" *ngFor="let item of checkedMetas" (click)="unCheckedMeta(item)">
+          <span class="label-title">{{item.metaRowName}}</span> |
+          <span>{{item.metaName}}</span>
+        </li>
+      </ul>
+      <a class="clear" (click)="unCheckedMeta('clear')">clear all</a>
+    </div>
+  </div >
+  <div class="albums">
+    <div class="album-head">
+      <div class="title">
+        <b>{{albumsInfo?.pageConfig.h1title}}</b>
+      </div>
+      <ul class="sort">
+        <li
+          [class.checked]="i === searchParams.sort"
+          *ngFor="let item of sorts; index as i"
+          (click)="changeSort(i)">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+    <div class="album-cards">
+      <div class="album-card" *ngFor="let album of albumsInfo?.albums; trackBy: trackByAlbums">
+        <div class="cover">
+          <img class="thumbnail" [src]="album.coverPath" alt="">
+          <img class="icon-play" src="../../../assets/images/icon-play-cover.png" alt="">
+          <p class="listen-count">
+            <i charleneIcon="headset" class="icon"></i>
+            <span>{{ album.playCount | numberFormat }}</span>
+          </p>
+        </div>
+        <div class="abstract">
+          <p class="txt title ellipsis" (click)="currentIcon='Star'">
+            <span *ngIf="album.isFinished === 2" class="tag">finished</span>
+            <span>{{album.title}}</span>
+          </p>
+          <p class="txt author"><span>{{album.anchorName}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

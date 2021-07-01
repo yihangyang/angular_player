@@ -1,0 +1,29 @@
+<div id="charlene">
+  <charlene-header></charlene-header>
+  <div class="content">
+    <div class="container">
+      <div class="breadcrumb-wrap">
+        <charlene-breadcrumb>
+          <charlene-breadcrumb-item>全部分类</charlene-breadcrumb-item>
+          <charlene-breadcrumb-item>
+            <div class="sub-category">
+              <div class="handler">
+                <span class="current">{{currentCategory?.displayName}}</span>
+                <i class="arrow"></i>
+              </div>
+              <div class="category-box">
+                <ul>
+                  <li (click)="changeCategory(item)" [class.checked]="item.id === currentCategory?.id" *ngFor="let item of categories;">{{item.displayName}}</li>
+                </ul>
+              </div>
+            </div>
+          </charlene-breadcrumb-item>
+          <ng-container *ngIf="subCategory.length">
+            <charlene-breadcrumb-item *ngFor="let item of subCategory">{{ item }}</charlene-breadcrumb-item>
+          </ng-container>
+        </charlene-breadcrumb>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

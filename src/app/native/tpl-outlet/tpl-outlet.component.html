@@ -1,0 +1,9 @@
+<div class="outlet">
+  <h3>template outlet</h3>
+  <div class="contents">
+    <ng-container [ngTemplateOutlet]="render || defaultTpl" [ngTemplateOutletContext]="myContext"></ng-container>
+    <ng-template #defaultTpl>
+      <span>something...</span>
+    </ng-template>
+  </div>
+</div>

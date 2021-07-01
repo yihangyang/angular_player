@@ -1,0 +1,13 @@
+<ng-template #firstTpl [ngIf]="true">
+  <p>first Template content</p>
+</ng-template>
+
+<ng-template #secondTpl>
+  <p>second Template content</p>
+</ng-template>
+
+<div class="box" #box>
+  <button (click)="insert(secondTpl)">insert second</button>
+</div>
+
+<ng-container #firstContainer></ng-container>
