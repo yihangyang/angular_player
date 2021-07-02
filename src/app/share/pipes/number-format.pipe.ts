@@ -4,7 +4,8 @@ import { round } from 'lodash'
 type unitTypes = 'k' | 'm';
 
 interface FormatNumberConfig {
-  
+  unit: unitTypes;
+  precision: number;
 }
 
 enum Exponent {
@@ -12,7 +13,7 @@ enum Exponent {
   'm' = 100000
 }
 
-const defaultConfig = {
+const defaultConfig: FormatNumberConfig = {
   unit: 'k',
   precision: 1,
 }
@@ -21,7 +22,7 @@ const defaultConfig = {
 })
 export class NumberFormatPipe implements PipeTransform {
 
-  transform(value: number, config = defaultConfig): string {
+  transform(value: number, config: FormatNumberConfig = defaultConfig): string {
     if (!value || value < Exponent['k']) {
       return value.toString();
     }

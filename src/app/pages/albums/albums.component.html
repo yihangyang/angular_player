@@ -1,4 +1,12 @@
 <div class="main-content">
+  <div>
+    tag:
+    <button (click)="tagColor='orange'">change color</button>
+    <charlene-tag [charleneColor]="tagColor" [charleneClosable]="true">
+      <!-- <charlene-tag [charleneColor]="tagColor"> -->
+      some
+    </charlene-tag>
+  </div>
   <div class="categories">
     <ul>
       <li [class.checked]="!searchParams.subcategory" (click)="changeSubCategory()">All</li>
@@ -51,7 +59,7 @@
           <img class="icon-play" src="../../../assets/images/icon-play-cover.png" alt="">
           <p class="listen-count">
             <i charleneIcon="headset" class="icon"></i>
-            <span>{{ album.playCount | numberFormat }}</span>
+            <span>{{ album.playCount | numberFormat: {precision: 2} }}</span>
           </p>
         </div>
         <div class="abstract">

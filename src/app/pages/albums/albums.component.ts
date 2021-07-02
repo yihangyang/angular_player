@@ -34,6 +34,7 @@ export class AlbumsComponent implements OnInit {
   checkedMetas: CheckedMeta[] = [];
   albumsInfo: AlbumsInfo;
   sorts = ['default sort', 'newly', 'most play'];
+  tagColor = 'magenta';
 
   constructor(
     private albumService: AlbumsService,
