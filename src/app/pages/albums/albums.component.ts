@@ -30,11 +30,11 @@ export class AlbumsComponent implements OnInit {
     page: 1,
     perPage: 30
   };
+  total = 0;
   categoryInfo: CategoryInfo;
   checkedMetas: CheckedMeta[] = [];
   albumsInfo: AlbumsInfo;
   sorts = ['default sort', 'newly', 'most play'];
-  tagColor = 'magenta';
 
   constructor(
     private albumService: AlbumsService,
@@ -68,6 +68,8 @@ export class AlbumsComponent implements OnInit {
         if(cacheMetas){
           needSetStatus = true;
           this.searchParams.meta = cacheMetas;
+        } else {
+          this.clearSubcategory();
         }
       }
       this.updatePageData(needSetStatus);
@@ -120,6 +122,13 @@ export class AlbumsComponent implements OnInit {
     this.updateAlbums();
   }
 
+  changePage(newCurrentPage: number): void {
+    if(this.searchParams.page !== newCurrentPage){
+      this.searchParams.page = newCurrentPage;
+      this.updateAlbums();
+    }
+  }
+
   private getMetaParams(): string {
     let result = '';
     if(this.checkedMetas.length){
@@ -150,10 +159,11 @@ export class AlbumsComponent implements OnInit {
     forkJoin([
       this.albumService.albums(this.searchParams),
       this.albumService.detailCategoryPageInfo(this.searchParams)
-    ]).subscribe(([albumInfo, categoryInfo]) => {
-      // console.log('AlbumsInfo', albumInfo);
+    ]).subscribe(([albumsInfo, categoryInfo]) => {
+      // console.log('albumsInfo', albumsInfo);
       this.categoryInfo = categoryInfo;
-      this.albumsInfo = albumInfo;
+      this.albumsInfo = albumsInfo;
+      this.total = albumsInfo.total;
       if (needSetStatus) {
         this.setStatus(categoryInfo);
       }
@@ -164,6 +174,7 @@ export class AlbumsComponent implements OnInit {
   private updateAlbums(): void {
     this.albumService.albums(this.searchParams).subscribe(albumsInfo => {
       this.albumsInfo = albumsInfo;
+      this.total = albumsInfo.total;
       this.cdr.markForCheck();
     })
   }

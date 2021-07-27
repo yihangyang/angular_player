@@ -1,0 +1,42 @@
+<div class="xm-modal-wrap" #modelWrap *ngIf="show">
+  <div class="xm-modal">
+    <div class="head">
+      <p>Angular 1</p>
+    </div>
+    <div class="form-wrap">
+      <form class="form" [formGroup]="formValues" (ngSubmit)="submit()">
+        <div class="form-item">
+          <input
+            formControlName="phone"
+            class="form-control charlene-input"
+            [class.charlene-input-error]="formControls.phone.showErr"
+            placeholder="phone number"
+            maxlength="11"
+            type="phone" />
+          <p class="form-control-err" *ngIf="formControls.phone.showErr">
+            <span *ngIf="formControls.phone.errors['required']">please input phone number</span>
+            <span *ngIf="formControls.phone.errors['pattern']">the form of number is incorrect</span>
+          </p>
+        </div>
+        <div class="form-item">
+          <input
+            formControlName="password"
+            class="form-control charlene-input"
+            [class.charlene-input-error]="formControls.password.showErr"
+            placeholder="password"
+            type="password" />
+          <p class="form-control-err" *ngIf="formControls.password.showErr">
+            <span *ngIf="formControls.password.errors['required']">please input password number</span>
+            <span *ngIf="formControls.password.errors['minlength']">Password muss min 6 length</span>
+          </p>
+        </div>
+        <div class="btn-wrap">
+          <button class="btn" charleneBtn [charleneBlock]="true" [disabled]="!formValues.valid">login</button>
+        </div>
+      </form>
+      <div class="remember">
+        <label charlene-checkbox>auto login</label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="charlene-page-wrap">
+  <ul class="charlene-pages">
+    <li
+      class="charlene-page"
+      *ngFor="let item of listOfPageItems"
+      [class.disabled]="item.disabled"
+      [class.checked]="item.num === currentPage"
+      (click)="pageClick(item)"
+    >
+      <ng-container [ngSwitch]="item.type">
+        <a *ngSwitchCase="'page'">{{ item.num }}</a>
+        <ng-container *ngSwitchDefault>
+          <span [ngSwitch]="item.type">
+            <i *ngSwitchCase="'prev'" charleneIcon="previewleft" class="icon"></i>
+            <i *ngSwitchCase="'next'" charleneIcon="previewright" class="icon"></i>
+            <i *ngSwitchDefault charleneIcon="more" class="icon"></i>
+          </span>
+        </ng-container>
+      </ng-container>
+    </li>
+  </ul>
+  <div class="charlene-page-navigate">
+    <input type="number" class="charlene-input" #to (keyup.enter)="inputVal(+to.value)" [min]="1" [max]="lastNum"/>
+    <button charleneBtn disabled (click)="inputVal(+to.value)">GO</button>
+  </div>
+</div>

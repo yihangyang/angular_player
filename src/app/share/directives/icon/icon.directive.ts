@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostBinding, Input, OnChanges, Renderer2, Simple
 import { IconType } from './type';
 
 @Directive({
-  selector: '[charleneIcon]',
+  selector: 'i[charleneIcon]',
   host: {
     '[class.iconfont]': 'true'
   }

@@ -1,11 +1,13 @@
-<header>
+<div style="height: 61px;" *ngIf="fix"></div>
+<!-- <header [class.fix]="fix"> -->
+<header [@moveUpMotion]="fix">
   <div class="container">
     <div class="logo">
       <img src="../../../assets/images/logo2.png" alt="migu-music" />
       <h1>Angular</h1>
     </div>
     <div class="user">
-      <a *ngIf="user else context">log in</a>
+      <a *ngIf="!user else context" (click)="login.emit()">log in</a>
       <ng-template #context>
         cherry
         <a>log out</a>

@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { combineLatest } from 'rxjs';
+import { combineLatest, empty, merge, of, Subscription } from 'rxjs';
+import { pluck, switchMap } from 'rxjs/operators';
 import { AlbumsService } from './services/apis/albums.service';
 import { Category } from './services/apis/types';
 import { CategoryService } from './services/business/category.service';
+import { OverlayRef, OverlayService } from './services/tools/overlay.service';
 
 @Component({
   selector: 'app-root',
@@ -16,23 +18,22 @@ export class AppComponent implements OnInit {
   categories: Category[] = [];
   categoryDeutsch: string = "";
   subCategory: string[] = [];
-  title = 'xmly';
+  showLogin: boolean = false;
+
   constructor(
     private albumService: AlbumsService,
     private cdr: ChangeDetectorRef,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
   ) {
-    
   }
+
   ngOnInit(): void {
     this.init();
   }
 
   changeCategory(category: Category): void {
-    if(this.currentCategory.id !== category.id) {
-      this.router.navigateByUrl('/albums/' + category.pinyin)
-    }
+    this.router.navigateByUrl('/albums/' + category.pinyin)
   }
 
   private init(): void {

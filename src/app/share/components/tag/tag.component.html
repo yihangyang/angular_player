@@ -1,2 +1,2 @@
 <ng-content></ng-content>
-<i [charleneIcon]="'Close'" *ngIf="charleneClosable" class="icon-close"></i>
+<i [charleneIcon]="'Close'" *ngIf="charleneClosable" (click)="closed.emit()" class="icon-close"></i>

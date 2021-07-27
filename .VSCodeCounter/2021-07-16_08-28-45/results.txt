@@ -1,0 +1,171 @@
+Date : 2021-07-16 08:28:45
+Directory : /Users/erwachen/Desktop/xmly/src/app
+Total : 115 files,  3337 codes, 92 comments, 448 blanks, all 3877 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| TypeScript |         77 |      2,062 |         59 |        427 |      2,548 |
+| SCSS       |         19 |        888 |         29 |         14 |        931 |
+| HTML       |         19 |        387 |          4 |          7 |        398 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                               | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                  |        115 |      3,337 |         92 |        448 |      3,877 |
+| layouts                                                                                                            |          4 |        129 |          1 |         13 |        143 |
+| layouts/header                                                                                                     |          4 |        129 |          1 |         13 |        143 |
+| native                                                                                                             |         32 |        359 |          6 |         91 |        456 |
+| native/alert                                                                                                       |          4 |         46 |          0 |         11 |         57 |
+| native/change-detection                                                                                            |         12 |        147 |          3 |         30 |        180 |
+| native/change-detection/change                                                                                     |          4 |         45 |          0 |         10 |         55 |
+| native/change-detection/change-child                                                                               |          4 |         55 |          2 |         10 |         67 |
+| native/change-detection/change-grandson                                                                            |          4 |         47 |          1 |         10 |         58 |
+| native/content-child                                                                                               |          4 |         36 |          0 |         12 |         48 |
+| native/shadow                                                                                                      |          4 |         37 |          0 |         12 |         49 |
+| native/tpl-container                                                                                               |          4 |         51 |          3 |         14 |         68 |
+| native/tpl-outlet                                                                                                  |          4 |         42 |          0 |         12 |         54 |
+| pages                                                                                                              |         17 |      1,300 |         45 |         99 |      1,444 |
+| pages/album                                                                                                        |         10 |        737 |         39 |         60 |        836 |
+| pages/album/sizer                                                                                                  |          4 |         71 |         17 |         24 |        112 |
+| pages/albums                                                                                                       |          6 |        552 |          6 |         35 |        593 |
+| services                                                                                                           |          7 |        290 |         11 |         60 |        361 |
+| services/apis                                                                                                      |          3 |        203 |         11 |         38 |        252 |
+| services/business                                                                                                  |          2 |         43 |          0 |         12 |         55 |
+| services/tools                                                                                                     |          2 |         44 |          0 |         10 |         54 |
+| share                                                                                                              |         45 |        959 |         29 |        157 |      1,145 |
+| share/components                                                                                                   |         28 |        717 |         25 |        102 |        844 |
+| share/components/breadcrumb                                                                                        |          9 |        121 |          0 |         27 |        148 |
+| share/components/breadcrumb/breadcrumb-item                                                                        |          4 |         51 |          0 |         11 |         62 |
+| share/components/checkbox                                                                                          |          9 |        267 |         23 |         38 |        328 |
+| share/components/pagination                                                                                        |          5 |        213 |          2 |         20 |        235 |
+| share/components/tag                                                                                               |          5 |        116 |          0 |         17 |        133 |
+| share/directives                                                                                                   |         11 |        167 |          4 |         29 |        200 |
+| share/directives/icon                                                                                              |          3 |         49 |          2 |          5 |         56 |
+| share/pipes                                                                                                        |          5 |         64 |          0 |         20 |         84 |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                           | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/erwachen/Desktop/xmly/src/app/app-routing.module.ts                                                         | TypeScript |         18 |          0 |          3 |         21 |
+| /Users/erwachen/Desktop/xmly/src/app/app.component.html                                                            | HTML       |         29 |          0 |          0 |         29 |
+| /Users/erwachen/Desktop/xmly/src/app/app.component.scss                                                            | SCSS       |         76 |          0 |          1 |         77 |
+| /Users/erwachen/Desktop/xmly/src/app/app.component.spec.ts                                                         | TypeScript |         31 |          0 |          5 |         36 |
+| /Users/erwachen/Desktop/xmly/src/app/app.component.ts                                                              | TypeScript |         58 |          0 |          8 |         66 |
+| /Users/erwachen/Desktop/xmly/src/app/app.module.ts                                                                 | TypeScript |         22 |          0 |          3 |         25 |
+| /Users/erwachen/Desktop/xmly/src/app/configs.ts                                                                    | TypeScript |          5 |          0 |          0 |          5 |
+| /Users/erwachen/Desktop/xmly/src/app/core.module.ts                                                                | TypeScript |         34 |          0 |          3 |         37 |
+| /Users/erwachen/Desktop/xmly/src/app/layouts/header/header.component.html                                          | HTML       |         16 |          1 |          0 |         17 |
+| /Users/erwachen/Desktop/xmly/src/app/layouts/header/header.component.scss                                          | SCSS       |         39 |          0 |          2 |         41 |
+| /Users/erwachen/Desktop/xmly/src/app/layouts/header/header.component.spec.ts                                       | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/layouts/header/header.component.ts                                            | TypeScript |         54 |          0 |          5 |         59 |
+| /Users/erwachen/Desktop/xmly/src/app/native/alert/alert.component.html                                             | HTML       |          4 |          0 |          0 |          4 |
+| /Users/erwachen/Desktop/xmly/src/app/native/alert/alert.component.scss                                             | SCSS       |         10 |          0 |          0 |         10 |
+| /Users/erwachen/Desktop/xmly/src/app/native/alert/alert.component.spec.ts                                          | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/alert/alert.component.ts                                               | TypeScript |         12 |          0 |          5 |         17 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-child/change-child.component.html              | HTML       |          7 |          0 |          0 |          7 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-child/change-child.component.scss              | SCSS       |          8 |          0 |          0 |          8 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-child/change-child.component.spec.ts           | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-child/change-child.component.ts                | TypeScript |         20 |          2 |          4 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-grandson/change-grandson.component.html        | HTML       |          6 |          0 |          0 |          6 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-grandson/change-grandson.component.scss        | SCSS       |          8 |          0 |          0 |          8 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-grandson/change-grandson.component.spec.ts     | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change-grandson/change-grandson.component.ts          | TypeScript |         13 |          1 |          4 |         18 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change/change.component.html                          | HTML       |          5 |          0 |          0 |          5 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change/change.component.scss                          | SCSS       |          8 |          0 |          0 |          8 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change/change.component.spec.ts                       | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/change-detection/change/change.component.ts                            | TypeScript |         12 |          0 |          4 |         16 |
+| /Users/erwachen/Desktop/xmly/src/app/native/content-child/content-child.component.html                             | HTML       |          5 |          0 |          0 |          5 |
+| /Users/erwachen/Desktop/xmly/src/app/native/content-child/content-child.component.scss                             | SCSS       |          0 |          0 |          1 |          1 |
+| /Users/erwachen/Desktop/xmly/src/app/native/content-child/content-child.component.spec.ts                          | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/content-child/content-child.component.ts                               | TypeScript |         11 |          0 |          5 |         16 |
+| /Users/erwachen/Desktop/xmly/src/app/native/shadow/shadow.component.html                                           | HTML       |          6 |          0 |          0 |          6 |
+| /Users/erwachen/Desktop/xmly/src/app/native/shadow/shadow.component.scss                                           | SCSS       |          0 |          0 |          1 |          1 |
+| /Users/erwachen/Desktop/xmly/src/app/native/shadow/shadow.component.spec.ts                                        | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/shadow/shadow.component.ts                                             | TypeScript |         11 |          0 |          5 |         16 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-container/tpl-container.component.html                             | HTML       |         10 |          0 |          3 |         13 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-container/tpl-container.component.scss                             | SCSS       |          0 |          0 |          1 |          1 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-container/tpl-container.component.spec.ts                          | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-container/tpl-container.component.ts                               | TypeScript |         21 |          3 |          4 |         28 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-outlet/tpl-outlet.component.html                                   | HTML       |          9 |          0 |          0 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-outlet/tpl-outlet.component.scss                                   | SCSS       |          0 |          0 |          1 |          1 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-outlet/tpl-outlet.component.spec.ts                                | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/native/tpl-outlet/tpl-outlet.component.ts                                     | TypeScript |         13 |          0 |          5 |         18 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/album-routing.module.ts                                           | TypeScript |         11 |          0 |          3 |         14 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/album.component.html                                              | HTML       |        162 |          1 |          1 |        164 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/album.component.scss                                              | SCSS       |        317 |         14 |          4 |        335 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/album.component.spec.ts                                           | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/album.component.ts                                                | TypeScript |        127 |          7 |         18 |        152 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/album.module.ts                                                   | TypeScript |         29 |          0 |          4 |         33 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/sizer/sizer.component.html                                        | HTML       |          5 |          0 |          0 |          5 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/sizer/sizer.component.scss                                        | SCSS       |          0 |          0 |          1 |          1 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/sizer/sizer.component.spec.ts                                     | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/album/sizer/sizer.component.ts                                          | TypeScript |         46 |         17 |         17 |         80 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/albums/albums-routing.module.ts                                         | TypeScript |         11 |          0 |          3 |         14 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/albums/albums.component.html                                            | HTML       |         75 |          0 |          1 |         76 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/albums/albums.component.scss                                            | SCSS       |        224 |          2 |          1 |        227 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/albums/albums.component.spec.ts                                         | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/albums/albums.component.ts                                              | TypeScript |        200 |          4 |         20 |        224 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/albums/albums.module.ts                                                 | TypeScript |         22 |          0 |          4 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/pages/pages.module.ts                                                         | TypeScript |         11 |          0 |          4 |         15 |
+| /Users/erwachen/Desktop/xmly/src/app/services/apis/albums.service.spec.ts                                          | TypeScript |         12 |          0 |          5 |         17 |
+| /Users/erwachen/Desktop/xmly/src/app/services/apis/albums.service.ts                                               | TypeScript |         86 |          7 |         15 |        108 |
+| /Users/erwachen/Desktop/xmly/src/app/services/apis/types.ts                                                        | TypeScript |        105 |          4 |         18 |        127 |
+| /Users/erwachen/Desktop/xmly/src/app/services/business/category.service.spec.ts                                    | TypeScript |         12 |          0 |          5 |         17 |
+| /Users/erwachen/Desktop/xmly/src/app/services/business/category.service.ts                                         | TypeScript |         31 |          0 |          7 |         38 |
+| /Users/erwachen/Desktop/xmly/src/app/services/tools/window.service.spec.ts                                         | TypeScript |         12 |          0 |          5 |         17 |
+| /Users/erwachen/Desktop/xmly/src/app/services/tools/window.service.ts                                              | TypeScript |         32 |          0 |          5 |         37 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb-item/breadcrumb-item.component.html    | HTML       |          8 |          0 |          0 |          8 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb-item/breadcrumb-item.component.scss    | SCSS       |          9 |          0 |          0 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb-item/breadcrumb-item.component.spec.ts | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb-item/breadcrumb-item.component.ts      | TypeScript |         14 |          0 |          5 |         19 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb.component.html                         | HTML       |          3 |          0 |          0 |          3 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb.component.scss                         | SCSS       |         15 |          0 |          1 |         16 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb.component.spec.ts                      | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb.component.ts                           | TypeScript |         14 |          0 |          5 |         19 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/breadcrumb/breadcrumb.module.ts                              | TypeScript |         18 |          0 |          4 |         22 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox-group.component.html                       | HTML       |          3 |          0 |          0 |          3 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox-group.component.scss                       | SCSS       |          2 |          1 |          0 |          3 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox-group.component.spec.ts                    | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox-group.component.ts                         | TypeScript |         65 |          8 |         10 |         83 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox.component.html                             | HTML       |          6 |          2 |          2 |         10 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox.component.scss                             | SCSS       |         75 |         12 |          0 |         87 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox.component.spec.ts                          | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox.component.ts                               | TypeScript |         58 |          0 |         10 |         68 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/checkbox/checkbox.module.ts                                  | TypeScript |         18 |          0 |          4 |         22 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/pagination/pagination.component.html                         | HTML       |         26 |          0 |          0 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/pagination/pagination.component.scss                         | SCSS       |         55 |          0 |          0 |         55 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/pagination/pagination.component.spec.ts                      | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/pagination/pagination.component.ts                           | TypeScript |         95 |          2 |         10 |        107 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/pagination/pagination.module.ts                              | TypeScript |         17 |          0 |          4 |         21 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/tag/tag.component.html                                       | HTML       |          2 |          0 |          0 |          2 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/tag/tag.component.scss                                       | SCSS       |         42 |          0 |          0 |         42 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/tag/tag.component.spec.ts                                    | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/tag/tag.component.ts                                         | TypeScript |         42 |          0 |          7 |         49 |
+| /Users/erwachen/Desktop/xmly/src/app/share/components/tag/tag.module.ts                                            | TypeScript |         10 |          0 |          4 |         14 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/charlene-btn.directive.spec.ts                               | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/charlene-btn.directive.ts                                    | TypeScript |         12 |          0 |          3 |         15 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/directives.module.ts                                         | TypeScript |         20 |          0 |          2 |         22 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/icon/icon.directive.spec.ts                                  | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/icon/icon.directive.ts                                       | TypeScript |         20 |          2 |          3 |         25 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/icon/type.ts                                                 | TypeScript |         22 |          0 |          0 |         22 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/str-tpl-outlet.directive.spec.ts                             | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/str-tpl-outlet.directive.ts                                  | TypeScript |         17 |          0 |          4 |         21 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/toggle-more.directive.spec.ts                                | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/toggle-more.directive.ts                                     | TypeScript |         41 |          2 |          7 |         50 |
+| /Users/erwachen/Desktop/xmly/src/app/share/directives/unless.directive.spec.ts                                     | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/pipes/number-format.pipe.spec.ts                                        | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/pipes/number-format.pipe.ts                                             | TypeScript |         21 |          0 |          6 |         27 |
+| /Users/erwachen/Desktop/xmly/src/app/share/pipes/pipes.module.ts                                                   | TypeScript |          9 |          0 |          4 |         13 |
+| /Users/erwachen/Desktop/xmly/src/app/share/pipes/safe-content.pipe.spec.ts                                         | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/share/pipes/safe-content.pipe.ts                                              | TypeScript |         20 |          0 |          6 |         26 |
+| /Users/erwachen/Desktop/xmly/src/app/share/share.module.ts                                                         | TypeScript |         11 |          0 |          6 |         17 |
+| /Users/erwachen/Desktop/xmly/src/app/unless.directive.spec.ts                                                      | TypeScript |          7 |          0 |          2 |          9 |
+| /Users/erwachen/Desktop/xmly/src/app/unless.directive.ts                                                           | TypeScript |         20 |          0 |          3 |         23 |
+| Total                                                                                                              |            |      3,337 |         92 |        448 |      3,877 |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

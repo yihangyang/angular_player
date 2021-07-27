@@ -111,7 +111,7 @@ export interface Track {
   isPaid?: boolean;
 }
 
-export interface RelateAlbum {
+export interface RelatedAlbum {
   id: number;
   playCount: number;
   title: string;

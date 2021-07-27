@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Album, AlbumInfo, Anchor, Base, Category, MetaData, SubCategory, TracksInfo } from './types';
+import { Album, AlbumInfo, Anchor, Base, Category, MetaData, RelatedAlbum, SubCategory, TracksInfo } from './types';
 import { map } from 'rxjs/operators'
 import {stringify} from 'qs';
 
@@ -73,6 +73,35 @@ export class AlbumsService {
       .pipe(map((res: Base<AlbumsInfo>) => res.data));
   }
 
+  // get album detail
+  album(albumId: string): Observable<AlbumRes> {
+    const params = new HttpParams().set('albumId', albumId);
+    return this.http
+    .get(`${environment.baseUrl}${this.prefix}album`, { params })
+    .pipe(map((res: Base<AlbumRes>) => res.data));
+  }
+
+  // get rating star
+  albumScore(albumId: string): Observable<number> {
+    return this.http
+      .get(`${environment.baseUrl}${this.prefix}album-score/${albumId}`)
+      .pipe(map((res: Base<{albumScore: number}>) => res.data.albumScore || 0));
+  }
+
+  // related album
+  relatedAlbums(albumId: string): Observable<RelatedAlbum[]> {
+    const params = new HttpParams().set('id', albumId);
+    return this.http
+    .get(`${environment.baseUrl}${this.prefix}album-relate`, { params })
+    .pipe(map((res: Base<{hotWordAlbums: RelatedAlbum[]}>) => res.data.hotWordAlbums));
+  }
+
+  // tracks list
+  tracks(args: AlbumTrackArgs): Observable<TracksInfo> {
+    const params = new HttpParams({ fromString: stringify(args) });
+    return this.http.get(`${environment.baseUrl}${this.prefix}album-tracks`, { params })
+      .pipe(map((res: Base<TracksInfo>) => res.data));
+  }
 
 }
 

@@ -1,0 +1,10 @@
+<div class="charlene-rate-wrap" (mouseleave)="rateLeave()">
+  <charlene-rate-item
+    *ngFor="let item of starArray; index as i"
+    [tpl]="tpl"
+    [rateItemCls]="rateItemStyles[i]"
+    (itemClick)="rateClick($event, i)"
+    (itemHover)="rateHover($event, i)"
+  >
+  </charlene-rate-item>
+</div>
