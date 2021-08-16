@@ -1,10 +1,10 @@
 <div id="charlene">
-  <charlene-header (login)="showLogin = true"></charlene-header>
+  <charlene-header (login)="showLogin = true" (logout)="logout()"></charlene-header>
   <div class="content">
     <div class="container">
       <div class="breadcrumb-wrap">
         <charlene-breadcrumb>
-          <charlene-breadcrumb-item>全部分类</charlene-breadcrumb-item>
+          <charlene-breadcrumb-item>All category</charlene-breadcrumb-item>
           <charlene-breadcrumb-item>
             <div class="sub-category">
               <div class="handler">
@@ -27,4 +27,10 @@
     </div>
   </div>
 </div>
-<!-- <charlene-login [show]="showLogin" [hide]="showLogin = false"></charlene-login> -->
+<charlene-login [show]="showLogin" (hide)="showLogin = false"></charlene-login>
+
+<!-- <div class="test-box" charleneDrag [limitInWindow]="true">
+  <div class="sec">sec</div>
+  <div class="sec sec2" charleneDragHandler>sec2</div>
+  <div class="sec sec3" charleneDragHandler>sec3</div>
+</div> -->

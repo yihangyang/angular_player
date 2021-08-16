@@ -9,8 +9,8 @@
     <div class="user">
       <a *ngIf="!user else context" (click)="login.emit()">log in</a>
       <ng-template #context>
-        cherry
-        <a>log out</a>
+        {{ user.name }}
+        <a (click)="logout.emit()">log out</a>
       </ng-template>
     </div>
   </div>

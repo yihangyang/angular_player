@@ -1,6 +1,13 @@
-<div class="xm-modal-wrap" #modelWrap *ngIf="show">
+<div
+  class="xm-modal-wrap"
+  #modelWrap
+  @modelAni
+  (@modelAni.done)="animationDone($event)"
+  *ngIf="visible"
+  charleneDrag [limitInWindow]="true"
+  >
   <div class="xm-modal">
-    <div class="head">
+    <div class="head" charleneDragHandler>
       <p>Angular 1</p>
     </div>
     <div class="form-wrap">
@@ -35,7 +42,7 @@
         </div>
       </form>
       <div class="remember">
-        <label charlene-checkbox>auto login</label>
+        <label charlene-checkbox [(ngModel)]="remeber">auto login-- {{remeber}}</label>
       </div>
     </div>
   </div>

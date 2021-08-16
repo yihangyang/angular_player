@@ -4,6 +4,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Inject, ElementRef, AfterVi
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { User } from 'src/app/services/apis/types';
+import { ContextService } from 'src/app/services/business/context.service';
 
 @Component({
   selector: 'charlene-header',
@@ -32,14 +33,20 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   user: User;
   fix: boolean = false;
   @Output() login = new EventEmitter<void>();
+  @Output() logout = new EventEmitter<void>();
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     private el: ElementRef,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private contextService: ContextService,
   ) { }
 
   
   ngOnInit(): void {
+    this.contextService.getUser().subscribe(user => {
+      this.user = user;
+      this.cdr.markForCheck();
+    });
   }
   
   ngAfterViewInit(): void {
@@ -47,7 +54,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       .pipe(debounceTime(300), distinctUntilChanged())
       .subscribe(() => {
         const top = this.doc.documentElement.scrollTop; // distance of scroll
-        console.log(top);
         if(top > this.el.nativeElement.clientHeight + 100){
           this.fix = true;
         } else if (top === 0) {

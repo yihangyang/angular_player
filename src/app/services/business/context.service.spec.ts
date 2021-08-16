@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AlbumsService } from './albums.service';
+import { ContextService } from './context.service';
 
-describe('AlbumsService', () => {
-  let service: AlbumsService;
+describe('ContextService', () => {
+  let service: ContextService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AlbumsService);
+    service = TestBed.inject(ContextService);
   });
 
   it('should be created', () => {

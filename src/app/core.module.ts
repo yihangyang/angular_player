@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +10,7 @@ import { LoginComponent } from './layouts/login/login.component';
 import { DirectivesModule } from './share/directives/directives.module';
 import { CheckboxModule } from './share/components/checkbox/checkbox.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InterceptorService } from './services/apis/interceptor.service';
 
 
 @NgModule({
@@ -29,12 +30,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true
+    }
+  ],
   exports: [
     HeaderComponent,
     BreadcrumbModule,
     BrowserModule,
     AppRoutingModule,
-    LoginComponent
+    LoginComponent,
+    DirectivesModule
   ],
 })
 export class CoreModule {

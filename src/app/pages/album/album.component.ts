@@ -124,7 +124,6 @@ export class AlbumComponent implements OnInit {
         this.selectedTracks.splice(targetIndex, 1);
       }
     }
-    console.log(checked, 'checkedChange-checked', this.selectedTracks);
   }
 
   isChecked(id: number): boolean {

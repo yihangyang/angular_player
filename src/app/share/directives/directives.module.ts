@@ -3,6 +3,7 @@ import { StrTplOutletDirective } from './str-tpl-outlet.directive';
 import { IconDirective } from './icon/icon.directive';
 import { CharleneBtnDirective } from './charlene-btn.directive';
 import { ToggleMoreDirective } from './toggle-more.directive';
+import { DragModule } from './drag/drag.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,11 @@ import { ToggleMoreDirective } from './toggle-more.directive';
     CharleneBtnDirective,
     ToggleMoreDirective,
   ],
+  imports: [
+    DragModule
+  ],
   exports: [
+    DragModule,
     StrTplOutletDirective,
     IconDirective,
     CharleneBtnDirective,

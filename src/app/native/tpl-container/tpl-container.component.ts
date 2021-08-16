@@ -15,8 +15,6 @@ export class TplContainerComponent implements OnInit, AfterViewInit {
     this.firstContain.insert(tpl.createEmbeddedView(null));
   }
   ngAfterViewInit(): void {
-    // const viewRef = this.firstTpl.createEmbeddedView(null);
-    // console.log('viewRef', viewRef)
     // this.boxEl.nativeElement.appendChild(viewRef.rootNodes[0]);    
     this.firstContain.createEmbeddedView(this.firstTpl);
   }

@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { combineLatest, empty, merge, of, Subscription } from 'rxjs';
-import { pluck, switchMap } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
+import { storageKeys } from './configs';
 import { AlbumsService } from './services/apis/albums.service';
 import { Category } from './services/apis/types';
+import { UserService } from './services/apis/user.service';
 import { CategoryService } from './services/business/category.service';
-import { OverlayRef, OverlayService } from './services/tools/overlay.service';
+import { ContextService } from './services/business/context.service';
+import { WindowService } from './services/tools/window.service';
 
 @Component({
   selector: 'app-root',
@@ -25,10 +27,22 @@ export class AppComponent implements OnInit {
     private cdr: ChangeDetectorRef,
     private categoryService: CategoryService,
     private router: Router,
+    private windowService: WindowService,
+    private userService: UserService,
+    private contextService: ContextService,
   ) {
   }
 
   ngOnInit(): void {
+    if(this.windowService.getStorage(storageKeys.remember)) {
+      this.userService.userInfo().subscribe(({user, token}) => {
+        this.contextService.setUser(user);
+        this.windowService.setStorage(storageKeys.auth, token)
+      }, error => {
+        console.log(error);
+        this.clearStorage();
+      })
+    }
     this.init();
   }
 
@@ -41,7 +55,6 @@ export class AppComponent implements OnInit {
       this.categoryService.getCategory(),
       this.categoryService.getSubCategory()
     ).subscribe(([category, subCategory]) => {
-      console.log('category', category)
       if(category != this.categoryDeutsch) {
         this.categoryDeutsch = category;
         if(this.categories.length) {
@@ -64,5 +77,18 @@ export class AppComponent implements OnInit {
       this.currentCategory = this.categories.find(item => item.pinyin === this.categoryDeutsch);
       this.cdr.markForCheck();
     })
+  }
+  
+  logout(): void {
+    this.userService.logout().subscribe(() => {
+      this.contextService.setUser(null);
+      this.clearStorage();
+      alert('logout successfully')
+    })
+  }
+
+  private clearStorage() {
+    this.windowService.removeStorage(storageKeys.remember);
+    this.windowService.removeStorage(storageKeys.auth);
   }
 }

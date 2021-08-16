@@ -73,7 +73,6 @@ export class SizerComponent implements OnInit, ControlValueAccessor {
 
   // // some
   // setDisabledState(disabled: boolean): void {
-  //   console.log('setDisabledState', disabled);
   //   this.disabled = disabled;
   // }
 
